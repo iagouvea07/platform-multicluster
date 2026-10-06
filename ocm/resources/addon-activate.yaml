@@ -1,7 +1,7 @@
 apiVersion: addon.open-cluster-management.io/v1alpha1
 kind: ManagedClusterAddOn
 metadata:
-  name: argocd-spoke-1
+  name: argocd
   namespace: spoke-1 
 spec:
   installNamespace: argocd
@@ -9,7 +9,7 @@ spec:
 apiVersion: addon.open-cluster-management.io/v1alpha1
 kind: ManagedClusterAddOn
 metadata:
-  name: argocd-spoke-2
+  name: argocd
   namespace: spoke-2 
 spec:
   installNamespace: argocd
