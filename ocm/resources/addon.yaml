@@ -1,0 +1,8 @@
+apiVersion: addon.open-cluster-management.io/v1alpha1
+kind: ClusterManagementAddOn
+metadata:
+  name: argocd
+spec:
+  addOnMeta:
+    displayName: "ArgoCD Integration Addon"
+    description: "Integração do OCM com o ciclo de vida de aplicações do Argo CD"
