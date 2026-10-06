@@ -4,7 +4,7 @@ metadata:
   name: argocd
   namespace: spoke-1 
 spec:
-  installNamespace: argocd
+  installNamespace: open-cluster-management-agent-addon
 ---
 apiVersion: addon.open-cluster-management.io/v1alpha1
 kind: ManagedClusterAddOn
@@ -12,4 +12,4 @@ metadata:
   name: argocd
   namespace: spoke-2 
 spec:
-  installNamespace: argocd
+  installNamespace: open-cluster-management-agent-addon
