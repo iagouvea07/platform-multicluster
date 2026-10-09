@@ -15,3 +15,31 @@ spec:
     automated:
       prune: true
       selfHeal: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ocm-argocd-addon
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: default
+  sources:
+  - repoURL: https://open-cluster-management.io/helm-charts 
+    chart: argocd-pull-integration
+    targetRevision: 0.29.0 
+    helm:
+      releaseName: argocd-pull-integration
+      valuesObject:
+        installStrategy:
+          type: Placements
+        placements:
+          - name: all-spokes
+            namespace: argocd
+            rolloutStrategy:
+              type: All
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
