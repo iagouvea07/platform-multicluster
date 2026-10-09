@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bootstrap-spoke-1
+  namespace: argocd
+  labels:
+    apps.open-cluster-management.io/pull-to-ocm-managed-cluster: "true"
+  annotations:
+    argocd.argoproj.io/skip-reconcile: "true"
+    apps.open-cluster-management.io/ocm-managed-cluster: spoke
+    apps.open-cluster-management.io/ocm-managed-cluster-app-namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: git@github.com:iagouvea07/platform-multicluster.git
+    targetRevision: main
+    path: bootstrap/resources
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
