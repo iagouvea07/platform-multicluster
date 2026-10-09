@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bootstrap-spoke-1
+  name: bootstrap-spoke
   namespace: argocd
   labels:
     apps.open-cluster-management.io/pull-to-ocm-managed-cluster: "true"
