@@ -9,6 +9,7 @@ metadata:
     argocd.argoproj.io/skip-reconcile: "true"
     apps.open-cluster-management.io/ocm-managed-cluster: spoke
     apps.open-cluster-management.io/ocm-managed-cluster-app-namespace: argocd
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   destination:
     server: https://kubernetes.default.svc
