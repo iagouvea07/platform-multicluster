@@ -2,6 +2,6 @@ apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: Placement
 metadata:
   name: all-spokes
-  namespace: argocd
+  namespace: ocm-argocd
 spec:
   clusterSets: [cluster-fleet]

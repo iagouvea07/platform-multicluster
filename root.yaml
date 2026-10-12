@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
   name: app-of-apps
-  namespace: argocd
+  namespace: ocm-argocd
 spec:
   destination:
     server: https://kubernetes.default.svc

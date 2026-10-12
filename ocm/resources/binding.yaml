@@ -2,6 +2,6 @@ apiVersion: cluster.open-cluster-management.io/v1beta2
 kind: ManagedClusterSetBinding
 metadata:
   name: cluster-fleet
-  namespace: argocd
+  namespace: ocm-argocd
 spec:
   clusterSet: cluster-fleet
