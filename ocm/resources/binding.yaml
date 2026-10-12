@@ -3,5 +3,7 @@ kind: ManagedClusterSetBinding
 metadata:
   name: cluster-fleet
   namespace: ocm-argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   clusterSet: cluster-fleet

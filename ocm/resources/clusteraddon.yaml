@@ -3,4 +3,6 @@ kind: ManagedClusterAddOn
 metadata:
   name: argocd
   namespace: spoke
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 spec: {}
