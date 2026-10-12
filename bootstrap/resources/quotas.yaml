@@ -8,7 +8,3 @@ spec:
     requests.memory: "64Mi"
     limits.cpu: "2"
     limits.memory: "512Mi"
-    configmaps: "1"
-    persistentvolumeclaims: "1"
-    pods: "1"
-    services: "1"
