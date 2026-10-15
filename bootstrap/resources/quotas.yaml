@@ -6,7 +6,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "1"
 spec:
   hard:
-    requests.cpu: "1"
-    requests.memory: "64Mi"
-    limits.cpu: "5"
-    limits.memory: "4Gi"
+    requests.cpu: "5"
+    requests.memory: "2Gi"
+    limits.cpu: "10"
+    limits.memory: "10Gi"
