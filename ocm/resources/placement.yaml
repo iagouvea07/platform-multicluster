@@ -2,7 +2,7 @@ apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: Placement
 metadata:
   name: all-spokes
-  namespace: ocm-argocd
+  namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "0"
 spec:
