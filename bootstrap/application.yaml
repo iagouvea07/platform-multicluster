@@ -12,6 +12,7 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
+    namespace: argocd
   project: default
   sources:
   - repoURL: git@github.com:iagouvea07/platform-multicluster.git
@@ -19,8 +20,7 @@ spec:
     path: bootstrap/resources
   - repoURL: https://github.com/argoproj/argo-cd
     targetRevision: v3.5.5
-    path: manifests/install.yaml
+    path: manifests/cluster-install
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+    syncOptions:
+    - ServerSideApply=true
