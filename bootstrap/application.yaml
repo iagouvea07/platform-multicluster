@@ -22,5 +22,8 @@ spec:
     targetRevision: v3.5.5
     path: manifests/cluster-install
   syncPolicy:
+    automated:
+      prune: true  
+      selfHeal: true
     syncOptions:
     - ServerSideApply=true
