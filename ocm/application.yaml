@@ -11,11 +11,9 @@ spec:
     - repoURL: git@github.com:iagouvea07/platform-multicluster.git
       targetRevision: main
       path: ocm/resources/
-    - repoURL: https://open-cluster-management.io/helm-charts
-      chart: argocd-pull-integration
-      targetRevision: 0.29.0
-      helm:
-        releaseName: argocd-pull-integration
+    - repoURL: oci://ghcr.io/cloudtooling/helm-charts/olm
+      chart: olm
+      targetRevision: v0.26.0 
   syncPolicy:
     automated:
       prune: true
