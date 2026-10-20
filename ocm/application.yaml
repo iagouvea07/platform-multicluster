@@ -13,7 +13,7 @@ spec:
       path: ocm/resources/
     - repoURL: oci://ghcr.io/cloudtooling/helm-charts/olm
       chart: olm
-      targetRevision: v0.26.0 
+      targetRevision: 0.26.0 
   syncPolicy:
     automated:
       prune: true
