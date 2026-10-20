@@ -1,8 +1,0 @@
-apiVersion: addon.open-cluster-management.io/v1alpha1
-kind: ManagedClusterAddOn
-metadata:
-  name: argocd
-  namespace: spoke
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
-spec: {}
