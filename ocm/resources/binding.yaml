@@ -6,4 +6,4 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
 spec:
-  clusterSet: cluster-fleet
+  clusterSet: global
