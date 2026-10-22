@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ocm-placement-generator
+  namespace: argocd
+data:
+  apiVersion: cluster.open-cluster-management.io/v1beta1
+  kind: placementdecisions
+  statusListKey: decisions
+  matchKey: clusterName
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: olm-spokes
+  namespace: argocd
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+    - clusterDecisionResource:
+        configMapRef: ocm-placement-generator
+        labelSelector:
+          matchLabels:
+            cluster.open-cluster-management.io/placement: all-spokes
+        requeueAfterSeconds: 30
+  template:
+    metadata:
+      name: 'olm-{{.clusterName}}'
+    spec:
+      project: default
+      destination:
+        name: '{{.clusterName}}'
+        namespace: olm
+      source:
+        repoURL: oci://ghcr.io/cloudtooling/helm-charts/olm
+        chart: olm
+        targetRevision: 0.26.0
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - ServerSideApply=true
+          - CreateNamespace=true
