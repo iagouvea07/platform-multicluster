@@ -10,7 +10,7 @@ spec:
   sources:
   - repoURL: git@github.com:iagouvea07/platform-multicluster.git
     targetRecision: main
-    path: argocd/
+    path: argocd/resources
   syncPolicy:
     automated:
       prune: true
