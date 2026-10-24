@@ -1,0 +1,22 @@
+apiVersion: work.open-cluster-management.io/v1
+kind: ManifestWork
+metadata:
+  name: argocd-operator-spoke
+  namespace: spoke
+spec:
+  workload: 
+    manifests:
+    - apiVersion: operators.coreos.com/v1alpha1
+      kind: Subscription
+      metadata:
+        name: my-argocd-operator
+        namespace: operators
+      spec:
+        channel: alpha
+        name: argocd-operator
+        source: operatorhubio-catalog
+        sourceNamespace: olm
+        config:
+          env:
+            - name: ARGOCD_CLUSTER_CONFIG_NAMESPACES
+              value: argocd
