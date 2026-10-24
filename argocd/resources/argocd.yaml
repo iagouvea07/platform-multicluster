@@ -9,7 +9,7 @@ spec:
     - apiVersion: v1
       kind: Namespace
       metadata:
-      name: argocd
+        name: argocd
     - apiVersion: argoproj.io/v1alpha1
       kind: ArgoCD
       metadata:
