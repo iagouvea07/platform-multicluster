@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    https://kubernetes.default.svc
+    server: https://kubernetes.default.svc
   project: default
   sources:
     - repoURL: git@github.com:iagouvea07/platform-multicluster.git
