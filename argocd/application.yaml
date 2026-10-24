@@ -9,7 +9,7 @@ spec:
   project: default
   sources:
     - repoURL: git@github.com:iagouvea07/platform-multicluster.git
-      targetRecision: main
+      targetRevision: main
       path: argocd/resources
   syncPolicy:
     syncOptions:
