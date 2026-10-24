@@ -8,10 +8,12 @@ spec:
     https://kubernetes.default.svc
   project: default
   sources:
-  - repoURL: git@github.com:iagouvea07/platform-multicluster.git
-    targetRecision: main
-    path: argocd/resources
+    - repoURL: git@github.com:iagouvea07/platform-multicluster.git
+      targetRecision: main
+      path: argocd/resources
   syncPolicy:
+    syncOptions:
+    - ServerSideApply=true
     automated:
       prune: true
       selfHeal: true
