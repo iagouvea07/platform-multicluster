@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  destination:
+    https://kubernetes.default.svc
+  project: default
+  sources:
+  - repoURL: git@github.com:iagouvea07/platform-multicluster.git
+    targetRecision: main
+    path: argocd/
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

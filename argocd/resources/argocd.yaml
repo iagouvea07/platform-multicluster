@@ -1,0 +1,28 @@
+apiVersion: work.open-cluster-management.io/v1
+kind: ManifestWork
+metadata:
+  name: argocd-spoke
+  namespace: spoke
+spec:
+  workload: 
+    manifests:
+    - apiVersion: v1
+      kind: Namespace
+      metadata:
+      name: argocd
+    - apiVersion: argoproj.io/v1alpha1
+      kind: ArgoCD
+      metadata:
+        name: argocd
+        namespace: argocd
+      spec:
+        version: v3.5.0
+        server:
+          service:
+            type: ClusterIP
+        sourceNamespaces:
+        - "*"
+        rbac:
+          defaultPolicy: 'role:admin'
+          policy: |
+            g, argocd-admin, role:admin
